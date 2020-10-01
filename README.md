@@ -16,7 +16,5 @@ La data cuenta con 8 atributos cuantitativos y 6 cualitativos, incluyendo el pri
 ### Data cualitativa
 
 Se realizó un conteo de cada valor por cada atributo.
-![alt text](https://raw.githubusercontent.com/JumpNShootMan/TP_MachineLearning/master/images/image_credit_history_marital_status.png)
-
-source = https://raw.githubusercontent.com/JumpNShootMan/TP_MachineLearning/master/images/image_credit_history_marital_status.png
- <p align="center"> <img src="source" width="350"/> <img src="source" width="350"/> </p>
+<p align="center"> <img src="Images/image_person_gender.png" width="350"/> <img src="Images/image_credit_history_marital_status.png" width="350"/> </p>
+<p align="center"> <img src="Images/image_person_degree_type_desc.png" width="350"/> <img src="Images/image_var_max_sbs_qual_12m.png" width="350"/> </p>

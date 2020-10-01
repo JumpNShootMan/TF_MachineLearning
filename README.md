@@ -1,4 +1,4 @@
-# TP_MachineLearning
+# Informe Trabajo Parcial Machine Learning
 
 ## Integrantes:
 - Alegre Flores, Renzo Paolo
@@ -16,6 +16,7 @@ La data cuenta con 8 atributos cuantitativos y 6 cualitativos, incluyendo el pri
 ### Data cualitativa
 
 Se realizó un conteo de cada valor por cada atributo.
-![alt text](iamgenes/image_credit_history_marital_status.png)
+![alt text](https://raw.githubusercontent.com/JumpNShootMan/TP_MachineLearning/master/images/image_credit_history_marital_status.png)
 
- <p align="center"> <img src="your_relative_path_here" width="350"/> <img src="your_relative_path_here_number_2_large_name" width="350"/> </p>
+source = https://raw.githubusercontent.com/JumpNShootMan/TP_MachineLearning/master/images/image_credit_history_marital_status.png
+ <p align="center"> <img src="source" width="350"/> <img src="source" width="350"/> </p>

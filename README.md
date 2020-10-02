@@ -46,3 +46,15 @@ También se uso la libreria seaborn para graficar un pairplot, el cual muestra l
 <pre align="center"> Figura 8 </pre>
 
 Como se observa en la Figura 8, los gráficos univariados evidencia la existencia de outliers. Por lo tanto, un paso de del pre-procesamiento debe ser normalizar estos atributos.
+
+## Tratamiento de datos
+
+## Validación de los modelos
+
+### Support Vector Machine
+### Modelo 2
+### Modelo 3
+
+## Resultados finales
+
+## Conclusiones

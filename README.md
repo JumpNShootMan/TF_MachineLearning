@@ -141,7 +141,42 @@ es necesario precisar que con un entrenemiento de mayor tiempo, el resultado pue
 alpha, número de capas y neuronas.
 
 
-#### Modelo 3
+#### Keras Tensorflow Sequential Model
+
+Modelo de clasificación que se puede crear capa por capa. Diseñado para entradas y salidas singulares, es decir que está diseñado en capas lineles. En este caso, el modelo se implementó con 4 capas Dense, con las siguientes activaciones:
+- Selu
+- Sigmoid
+- Softmax
+- Relu
+
+Y se utilizaron en las pruebas los optimizadores:
+- Adam
+- SGD (Este se usó en el modelo final)
+- Adagrad
+
+La pérdida se midió con la función de 'binary-crossentropy'
+La métrica utilizada fue la de precisión (accuracy)
+
+Como un agregado a este modelo, se aplicó una extracción de las columnas más importantes utilizando Random Forest, para reducir el ruido en los datos y buscar una mejor precisión a la hora de evaluar el modelo. En este caso, buscamos las 15 filas más importantes de las 23 que existen en el dataset luego de procesarlo:
+
+<p align="center"> <img src="Images/TensorFlow/FeatureExt.png" width="450"/> </p>
+<pre align="center"> Figura 18 </pre>
+
+El modelo toma la siguiente forma:
+
+<p align="center"> <img src="Images/TensorFlow/Model.png" width="450"/> </p>
+<pre align="center"> Figura 19 </pre>
+
+La data se separó en 80% datos de entrenamiento y 20% datos de prueba y se entrenó y evaluó.
+
+<p align="center"> <img src="Images/TensorFlow/epochs.png" width="450"/> </p>
+<pre align="center"> Figura 20 </pre>
+
+A continuación se presentan las gráficas de Precisión y Pérdida:
+
+<p align="center"> <img src="Images/TensorFlow/plot3.png" width="450"/> </p>
+<pre align="center"> Figura 21 </pre>
+Como se puede observar, la precisión se mantiene estática a través de todo el proceso de entrenamiento, mientras que la pérdida cuenta con una variación por decimales pasando por las épocas, manteniéndose generalmente similar.
 
 ## Resultados
 
@@ -152,9 +187,9 @@ Se empleó el metodo GridSearchCV para buscar la combinación de valores de hipe
 Los hiperparámetros sobre los que se iteró para este modelo fueron 'criterion', 'max_depth' y 'min_samples_leaf'.
 
 <p align="center"> <img src="Images/Decision Tree/metricas best modelo.PNG" width="400"/> <img src="Images/Decision Tree/CV best modelo.PNG" width="300"/> </p>
-<pre align="center"> Figura 18                                        Figura 19</pre>
+<pre align="center"> Figura 22                                        Figura 19</pre>
 
-Como se observa en la Figura 18, el modelo obtuvo un 72% de accuracy superando al modelo base. También, obtuvo un mayor valor de precision para la calse '1' lo que indica que el modelo pudo clasificar correctamenta una mayor cantidad de instacias de esta clase. Por otro lado, los resultados del 5-fold Cross-validation (Figura 18) son superiores a los del modelo base y hay una menor variación entre el resultado de cada fold.
+Como se observa en la Figura 22, el modelo obtuvo un 72% de accuracy superando al modelo base. También, obtuvo un mayor valor de precision para la calse '1' lo que indica que el modelo pudo clasificar correctamenta una mayor cantidad de instacias de esta clase. Por otro lado, los resultados del 5-fold Cross-validation (Figura 18) son superiores a los del modelo base y hay una menor variación entre el resultado de cada fold.
 
 ### Modelo 2
 ### Modelo 3

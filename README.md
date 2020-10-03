@@ -104,23 +104,42 @@ Modelos computacionales inspirados en el cerebro humano
 - Sinapsis: conexiones que intercomunican las neuronas
 
 Los pasos que se seguimos para la construcción y validación de este modelo fueron los siguientes:
+Para realizar el modelo se usaron las bibliotecas: pandas, numpy, matplotlib y sklearn.
 Primero, el dataset es repartido en 4 porciones de prueba y los llamamos: 
 "X_train, X_test, Y_train, Y_test"
-Seguido, aplicamos KFold (10 splits o particiones)
+Seguido, aplicamos KFold (10 splits o particiones).
+
+La red neuronal fue ejecutada varias veces iterando sus atributos tales como número de capas, número de neuronas,el valor de alpha, etx.
+Sin embargo, por más que estos hayan variado, el resultado fue muy similar. siendo el mejor promedio: 0.6489181194770927.
+
+En la figura 14, se aprecioa la siguiente configuración de red neuronal:
+red_neuronal = MLPClassifier(hidden_layer_sizes=(8,2), max_iter=100, learning_rate_init=0.01, activation='logistic')
+
 
 <p align="center"> <img src="Images/RedesNeuronales/img1.PNG" width="450"/> </p>
 <pre align="center"> Figura 14 </pre>
 
+En la figura 15, se aprecioa la siguiente configuración de red neuronal (con alpha = 0.2) :
+red_neuronal2 = MLPClassifier(hidden_layer_sizes=(8,2), max_iter=100, learning_rate_init=0.01, activation='logistic', alpha= 0.2)
+
 <p align="center"> <img src="Images/RedesNeuronales/img2.PNG" width="450"/> </p>
 <pre align="center"> Figura 15 </pre>
 
+En la figura 16, se observa comportamiento que tuvo la neruona con la alteración de alpha = 0,2.
 
 <p align="center"> <img src="Images/RedesNeuronales/img3.PNG" width="450"/> </p>
 <pre align="center"> Figura 16 </pre>
 
+En la figura 17 se puede apreciar los resultados de cada uno de los 10 folds de la red neuronal 2 (alpha = 0.2)
+Este es el mejor resultado de todos las muestras que se probaron.
 
 <p align="center"> <img src="Images/RedesNeuronales/img_fold.PNG" width="450"/> </p>
 <pre align="center"> Figura 17 </pre>
+
+Es necesario precisar que el valor promedio mayor fue 0.6489181194770927 el cual no es un valor muy favorable para aplicar, asimismo,
+es necesario precisar que con un entrenemiento de mayor tiempo, el resultado puede incrementar y se puede obtener el mejor modelo iterando
+alpha, número de capas y neuronas.
+
 
 #### Modelo 3
 

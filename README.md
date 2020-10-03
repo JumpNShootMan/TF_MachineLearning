@@ -51,21 +51,37 @@ Como se observa en la Figura 8, los gráficos univariados evidencia la existenci
 
 ### Tratamiento de datos
 
-## Resultados
+Lo primero que se hizo fue eliminar los atributos con data no utilizable para la clasificación: 'idPrestamo' y 'default_request_amount'. El primero por ser un indice y el segundo porque el dataset solo contiene instancias de valor '0'.
 
-### Decision Tree Classifier
+En segundo lugar se recorrió el atributo 'person_degree_type_desc' par agrupar las instancias de valor 'Carrera Tecnica' que habian sido separadas en dos por lo caracteres especiales.
+
+Después, se procedio a utilizar OneHotEncoding para transformar los atributos cualitativos en cuantitativos. Este metodo convierte la data cualitativa en un arreglo binario, como se puede observar en la Figura 9, para que el modelo pueda realizar una mejor predicción.
+
+<p align="center"> <img src="Images/Pre-Procesamiento/OneHotEncoding.PNG" width="450"/> </p>
+<pre align="center"> Figura 9 </pre>
+
+Luego, se transformó la data tipo 'object' en data numérica. Para lo cual, se tuvo que convertir los valores mayores a 1000 que estaban almacenados como 'string' en 'float' para, posteriormente, trasnformarlos con el metodo 'pd.to_numeric'.
+
+En quinto lugar, se empleó SimpleImputer, de la libreria 'sklearn', con estrategia de media para el tratamiento de missing values. El unico atributo en el dataset que contenía NaN era 'var_employment_time_in_months'.
+
+Finalmente, debido a que en el análisis se identificó la precencia de outliers se realizó la normalización de la data originalmente cuantitativa. Se utilizo MinMaxScaler de la librería 'sklearn' en los siguientes atributos 'monthly_debt_capacity', 'var_employment_time_in_months', 'approved_amount', 'approved_interest_amount' y 'var_net_incom'.
+
+### Validación de modelos 
+
+#### Decision Tree Classifier
+
 Modelo de clasificación supervisada donde los datos se dividen continuamente de acuerdo con un parámetro, los arboles de decisión constan de:
 - Nodos, evaluan el valor de un determinado atributo.
 - Ramas, corresponde al resultado de la evaluación y se conectan al siguiente nodo.
 - Nodos hoja, nodos finales que corresponden a un valor del atributo objetivo (clase a predecir).
 
-Los paso que se sigueron para la construcción y validación de este modelo fueron los siguientes:
+Los pasos que se seguimos para la construcción y validación de este modelo fueron los siguientes:
 
 Primero, separamos nuestra data con una proporción 90/10 para probar el rendimiento de un DecisionTreeClassifier básico, implementado con la libreria sklearn.
 <p align="center"> <img src="Images/Decision Tree/metricas modelo base.PNG" width="400"/> <img src="Images/Decision Tree/CV modelo base.PNG" width="300"/> </p>
 <pre align="center"> Figura 9                                        Figura 10</pre>
 
-Como se observa en la Figura 9, un árbol de decisión base obtuvo un 62% de accuracy con nuestra data. Así mismo, es notorio que el modelo no clasifica correctamente las instacias clase '1', posiblemente debido a que hay poca data de esta clase. También, se empleo el metodo 5-fold Cross-validation para evaluar el comportamiento del modelo con diferentes particiones del dataset. La Figura 10 muestra el accuracy obtenido en cada fold y la media de estos.
+Como se observa en la Figura 9, un árbol de decisión base obtuvo un 62% de accuracy con nuestra data. Así mismo, es notorio que el modelo no clasifica correctamente las instacias clase '1', posiblemente debido a que hay poca data de esta clase. También, se empleó 5-fold Cross-validation para evaluar el comportamiento del modelo con diferentes particiones del dataset. La Figura 10 muestra el accuracy obtenido en cada fold y la media de estos.
 
 En segundo lugar, se graficaron curvas de validación y de aprendizaje para el proceso de validación del modelo. 
 
@@ -81,7 +97,17 @@ Por otro lado, la Figura 12 muestra la curva de validación para el hiperparáme
 
 La Figura 13 muestra la curva de aprendizaje del modelo, se observa que la cura de entrenamiento es muy cercana a 100% de accuracy lo cual es señal de overfitting. Por otro lado, la curva del cross-validation es muy variable a lo largo de las iteraciones. Además, entre las curvas hay mucha diferencia lo que indica un escenario de alta varianza. Es recomendable consegir más data o reducir la complejidad del modelo para mejorar el performance de este.
 
-Finalmente, se empleó el metodo GridSearchCV para iterando en los siguentes hiperparámetros: 'criterion', 'max_depth', 'min_samples_leaf' en busca de la combinación que obtenga mejor acurracy. Los valores para los dos ultimos fueron acotados mediante la observación de las curvas de validación. Despues de obtener el mejor modelo, se realizó la predicción con la misma partición de data que se uso para el modelo base.
+#### Modelo 2
+
+#### Modelo 3
+
+## Resultados
+
+Se empleó el metodo GridSearchCV para buscar la combinación de valores de hiperparámetros, previamente especifivados, que obtenga mejor acurracy. Los valores fueron acotados mediante la observación de las curvas de validación. Despues de obtener el mejor modelo, se realizó la predicción con la misma partición de data que se uso para el modelo base.
+
+### Decision Tree Classifier
+
+Los hiperparámetros sobre los que se iteró para este modelo fueron 'criterion', 'max_depth' y 'min_samples_leaf'.
 
 <p align="center"> <img src="Images/Decision Tree/metricas best modelo.PNG" width="400"/> <img src="Images/Decision Tree/CV best modelo.PNG" width="300"/> </p>
 <pre align="center"> Figura 14                                        Figura 15</pre>

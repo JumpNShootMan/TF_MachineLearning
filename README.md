@@ -244,4 +244,4 @@ Como se observa en la Figura 31, el modelo obtuvo un 70% de accuracy. Por otro l
 Se han aplicado distintos modelos predictivos de machine learning: Decision Tree, Naive Bayes, Keras Tensorflow Sequential Model, Neural Network. Estos modelos
 fueron aplicados a un dataset de créditos bancarios, el cual fue pocesado de dos formas.
 
-Los modelos tuvieron como resultado un accuracy que oscilna entre 62% a 73.84%, siendo el modelo Keras Tensorflow Sequential Model el que ogró dicha precisión gracias al efectivo pre-procesamiento de los datos y la extracción de las 15 columnas más importantes, que fueron procesos claves para asegurar una clasificación más efectiva de las instancias.
+Los modelos tuvieron como resultado un accuracy que oscilna entre 62% a 73.84%, siendo el modelo Keras Tensorflow Sequential Model el que logró dicha precisión gracias al efectivo pre-procesamiento de los datos y la extracción de las 15 columnas más importantes, que fueron procesos claves para asegurar una clasificación más efectiva de las instancias.

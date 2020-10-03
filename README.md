@@ -174,9 +174,9 @@ La data se separó en 80% datos de entrenamiento y 20% datos de prueba y se entr
 
 A continuación se presentan las gráficas de Precisión y Pérdida:
 
-<p align="center"> <img src="Images/TensorFlow/plot3.png" width="450"/> </p>
+<p align="center"> <img src="Images/TensorFlow/plotfin.png" width="650"/> </p>
 <pre align="center"> Figura 21 </pre>
-Como se puede observar, la precisión se mantiene estática a través de todo el proceso de entrenamiento, mientras que la pérdida cuenta con una variación por decimales pasando por las épocas, manteniéndose generalmente similar.
+Como se puede observar, la precisión se mantiene estática a través de todo el proceso de entrenamiento, mientras que la pérdida cuenta con una variación mínima (alrededor de diezmillonésimas) pasando por las épocas, manteniéndose generalmente similar.
 
 ## Resultados
 
@@ -192,6 +192,19 @@ Los hiperparámetros sobre los que se iteró para este modelo fueron 'criterion'
 Como se observa en la Figura 22, el modelo obtuvo un 72% de accuracy superando al modelo base. También, obtuvo un mayor valor de precision para la calse '1' lo que indica que el modelo pudo clasificar correctamenta una mayor cantidad de instacias de esta clase. Por otro lado, los resultados del 5-fold Cross-validation (Figura 18) son superiores a los del modelo base y hay una menor variación entre el resultado de cada fold.
 
 ### Modelo 2
-### Modelo 3
+
+Si agregas figuras porfa chequea los numeros de figura más abajo!
+#### Keras Tensorflow Sequential Model
+
+Sin la aplicación de la extracción de las columnas más importantes, la evaluación del mismo modelo resulta en los siguientes resultados:
+
+<p align="center"> <img src="Images/TensorFlow/sansFE.png" width="650"/> </p>
+<pre align="center"> Figura 23 </pre>
+
+En la siguiente figura se encuentra la evaluación del modelo final:
+<p align="center"> <img src="Images/TensorFlow/result2.png" width="650"/> </p>
+<pre align="center"> Figura 24 </pre>
+
+Como se puede observar, el modelo logró una precisión de 73.84% gracias al efectivo pre-procesamiento de los datos y la extracción de las 15 columnas más importantes, que fueron procesos claves para asegurar una clasificación más efectiva de las instancias.
 
 ## Conclusiones

@@ -97,7 +97,30 @@ Por otro lado, la Figura 12 muestra la curva de validación para el hiperparáme
 
 La Figura 13 muestra la curva de aprendizaje del modelo, se observa que la cura de entrenamiento es muy cercana a 100% de accuracy lo cual es señal de overfitting. Por otro lado, la curva del cross-validation es muy variable a lo largo de las iteraciones. Además, entre las curvas hay mucha diferencia lo que indica un escenario de alta varianza. Es recomendable consegir más data o reducir la complejidad del modelo para mejorar el performance de este.
 
-#### Modelo 2
+#### Neural Network (1er Dataset)
+
+Modelos computacionales inspirados en el cerebro humano
+- Neuronas: unidades de procesamiento
+- Sinapsis: conexiones que intercomunican las neuronas
+
+Los pasos que se seguimos para la construcción y validación de este modelo fueron los siguientes:
+Primero, el dataset es repartido en 4 porciones de prueba y los llamamos: 
+"X_train, X_test, Y_train, Y_test"
+Seguido, aplicamos KFold (10 splits o particiones)
+
+<p align="center"> <img src="Images/RedesNeuronales/img1.PNG" width="450"/> </p>
+<pre align="center"> Figura 14 </pre>
+
+<p align="center"> <img src="Images/RedesNeuronales/img2.PNG" width="450"/> </p>
+<pre align="center"> Figura 15 </pre>
+
+
+<p align="center"> <img src="Images/RedesNeuronales/img3.PNG" width="450"/> </p>
+<pre align="center"> Figura 16 </pre>
+
+
+<p align="center"> <img src="Images/RedesNeuronales/img_fold.PNG" width="450"/> </p>
+<pre align="center"> Figura 17 </pre>
 
 #### Modelo 3
 
@@ -110,9 +133,9 @@ Se empleó el metodo GridSearchCV para buscar la combinación de valores de hipe
 Los hiperparámetros sobre los que se iteró para este modelo fueron 'criterion', 'max_depth' y 'min_samples_leaf'.
 
 <p align="center"> <img src="Images/Decision Tree/metricas best modelo.PNG" width="400"/> <img src="Images/Decision Tree/CV best modelo.PNG" width="300"/> </p>
-<pre align="center"> Figura 14                                        Figura 15</pre>
+<pre align="center"> Figura 18                                        Figura 19</pre>
 
-Como se observa en la Figura 14, el modelo obtuvo un 72% de accuracy superando al modelo base. También, obtuvo un mayor valor de precision para la calse '1' lo que indica que el modelo pudo clasificar correctamenta una mayor cantidad de instacias de esta clase. Por otro lado, los resultados del 5-fold Cross-validation (Figura 14) son superiores a los del modelo base y hay una menor variación entre el resultado de cada fold.
+Como se observa en la Figura 18, el modelo obtuvo un 72% de accuracy superando al modelo base. También, obtuvo un mayor valor de precision para la calse '1' lo que indica que el modelo pudo clasificar correctamenta una mayor cantidad de instacias de esta clase. Por otro lado, los resultados del 5-fold Cross-validation (Figura 18) son superiores a los del modelo base y hay una menor variación entre el resultado de cada fold.
 
 ### Modelo 2
 ### Modelo 3

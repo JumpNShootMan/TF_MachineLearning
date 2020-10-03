@@ -240,3 +240,8 @@ El hiperparámetro sobre el que se iteró para este modelo fue 'alpha'.
 Como se observa en la Figura 31, el modelo obtuvo un 70% de accuracy. Por otro lado, los resultados del 5-fold Cross-validation (Figura 32) son similares a los del modelo base. Al igual que el modelo base, no clasifica correctamente las instancias de clase '1' reforzando la suposición de la existencia de sesgo moderado.
 
 ## Conclusiones
+
+Se han aplicado distintos modelos predictivos de machine learning: Decision Tree, Naive Bayes, Keras Tensorflow Sequential Model, Neural Network. Estos modelos
+fueron aplicados a un dataset de créditos bancarios, el cual fue pocesado de dos formas.
+
+Los modelos tuvieron como resultado un accuracy que oscilna entre 62% a 73.84%, siendo el modelo Keras Tensorflow Sequential Model el que ogró dicha precisión gracias al efectivo pre-procesamiento de los datos y la extracción de las 15 columnas más importantes, que fueron procesos claves para asegurar una clasificación más efectiva de las instancias.

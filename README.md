@@ -112,7 +112,7 @@ Seguido, aplicamos KFold (10 splits o particiones).
 La red neuronal fue ejecutada varias veces iterando sus atributos tales como número de capas, número de neuronas,el valor de alpha, etx.
 Sin embargo, por más que estos hayan variado, el resultado fue muy similar. siendo el mejor promedio: 0.6489181194770927.
 
-En la Figura 15, se aprecioa la siguiente configuración de red neuronal:
+En la Figura 15, se aprecio la siguiente configuración de red neuronal:
 red_neuronal = MLPClassifier(hidden_layer_sizes=(8,2), max_iter=100, learning_rate_init=0.01, activation='logistic')
 
 
@@ -135,6 +135,9 @@ Este es el mejor resultado de todos las muestras que se probaron.
 
 <p align="center"> <img src="Images/RedesNeuronales/img_fold.PNG" width="450"/> </p>
 <pre align="center"> Figura 18 </pre>
+
+<p align="center"> <img src="Images/RedesNeuronales/results.PNG" width="450"/> </p>
+<pre align="center"> Figura 18.1 </pre>
 
 Es necesario precisar que el valor promedio mayor fue 0.6489181194770927 el cual no es un valor muy favorable para aplicar, asimismo,
 es necesario precisar que con un entrenemiento de mayor tiempo, el resultado puede incrementar y se puede obtener el mejor modelo iterando
